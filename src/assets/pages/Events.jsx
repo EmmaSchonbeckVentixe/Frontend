@@ -1,11 +1,20 @@
 import React, { useState } from 'react'
+import Nav from '../components/Nav'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import EventList from '../components/EventList'
 
 const Events = () => {
     const [events, setEvents] = useState([])
 
   return (
-    <div>
-        {/* Lägg in kod för sidan (dela upp i komponenter dock) */}
+    <div className='portal-wrapper'>
+        <Nav />
+        <Header />
+        <main>
+          <EventList />
+        </main>
+        <Footer />
     </div>
   )
 }
