@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const BookingEvent = () => {
-  const {navigate} = useNavigate()
+  const navigate = useNavigate()
   const { id } = useParams()
   const [event, setEvent] = useState({})
   const [formData, setFormData] = useState({
@@ -12,7 +12,8 @@ const BookingEvent = () => {
     email: '',
     streetName: '',
     postalCode: '',
-    city: ''
+    city: '',
+    ticketQuantity: 1
   })
 
   useEffect(() => {
@@ -59,7 +60,7 @@ const BookingEvent = () => {
     e.preventDefault()
     
     try {
-      const res = await fetch(`https://ee-bookingservice-ewfjbzhzbrerd7bw.swedencentral-01.azurewebsites.net/api/bookings`, {
+      const res = await fetch(`https://ee-bookingservice-fbftdwbnfpgzfgba.swedencentral-01.azurewebsites.net/api/bookings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
