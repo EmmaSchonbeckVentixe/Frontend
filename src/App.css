@@ -1,0 +1,123 @@
+
+/*----------------
+     WRAPPERS
+-----------------*/
+
+.portal-wrapper {
+    display: grid;
+    grid-template-columns: 25rem 1fr;
+    grid-template-areas: "navbar header" "navbar eventlist" "navbar footer";
+    gap: 1rem;
+}
+
+.navbar-wrapper {
+    background-color: #E4E5F5;
+    border-radius: 16px;
+    grid-area: navbar;
+    height: 100dvh;
+}
+
+.header-wrapper {
+    background-color: #F7F7F7;
+    border-radius: 16px;
+    grid-area: header;
+
+        h4 {
+            font-weight: 600;
+            padding: 1rem;
+        }
+}
+
+.eventlist-wrapper {
+    grid-area: eventlist;
+}
+
+.footer-wrapper {
+    grid-area: footer;
+    background-color: #F7F7F7;
+    width: auto;
+    gap: 1rem;
+    border-radius: 16px;
+    padding: 1rem;
+}
+
+/*----------------
+      NAVBAR
+-----------------*/
+
+.navbar {
+    margin-left: 2rem;
+}
+
+.logo-ventixe {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    p {
+        font-size: 24px;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;;
+        font-style: normal;
+    }
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    img {
+        color: black;
+        fill: currentColor;
+    }
+
+    p {
+        font-size: 1rem;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;;
+        font-style: normal;
+    }
+}
+
+/*----------------
+      FOOTER
+-----------------*/
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #777779;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;;
+    font-style: normal;
+}
+
+.footer-text {
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;;
+    font-style: normal;
+    color: #C3C3C4;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+/*----------------
+     EVENTLIST
+-----------------*/
+
+.event-card {
+    width: 274px;
+}
+
+.img-eventcard {
+    width: auto;
+}

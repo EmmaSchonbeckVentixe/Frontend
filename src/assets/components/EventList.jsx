@@ -19,7 +19,7 @@ const EventList = () => {
     }, [])
 
   return (
-    <section id="events">
+    <section id="events" className='eventlist-wrapper'>
         {
             events.map(event => (<EventItem key={event.id} item={event} />))
         }
