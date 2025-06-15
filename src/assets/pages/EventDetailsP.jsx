@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
+import Terms from '../components/Terms';
+import Packages from '../components/Packages';
+import Partners from '../components/Partners';
+import EventDetailsHeader from '../components/EventDetailsHeader';
 
 const EventDetails = () => {
     const { id } = useParams()
@@ -20,8 +26,24 @@ const EventDetails = () => {
 
   return (
     <div className='event-details'>
-      <h1>{event.title}</h1>    
-      <Link to={`/events/booking/${id}`}>Book Event</Link>
+      <Nav />
+      <EventDetailsHeader />
+      <main className='main-content'>
+          <div className='event-card event-details'>
+            <h1>{event.title}</h1>
+            <Link to={`/events/booking/${id}`}>Book Event</Link>
+          </div>
+          <div className='terms-list'>
+            <Terms />
+          </div>
+          <div className='packages'>
+            <Packages />
+          </div>
+          <div className='partners'>
+            <Partners />
+          </div>
+      </main>
+      <Footer />
     </div>
   )
 }

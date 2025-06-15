@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const EventItem = ({ item }) => {
     return (
-        <Link to={`/${item.id}`} className="event-link">
+        <Link to={`/events/${item.id}`} className="event-link">
             <div className='event-card'>
                 <div>
                     <img className='img-eventcard' src="/Images/Eventlist/imgPlaceholder.jpeg" alt="Image placeholder" />
