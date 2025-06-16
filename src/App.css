@@ -218,6 +218,8 @@
     display: grid;
     grid-template-columns: 18rem 1fr;
     grid-template-areas: "navbar header" "navbar main" "navbar footer";
+    gap: 1rem;
+    padding: .7rem;
 }
 
 .main-content {
@@ -227,8 +229,10 @@
     grid-template-columns: 2fr 1fr;
     grid-template-areas: "eventcard packages" "terms packages" "partners packages";
 
-    gap: 2rem;
+    gap: 1rem;
     padding: 2rem 3rem;
+    background-color: #F7F7F7;
+    border-radius: 16px;
 }
 
 .event-card.event-details {
@@ -274,7 +278,6 @@
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    margin-top: 2rem;
 }
 
 .terms h3 {
@@ -304,14 +307,25 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 16px;
 }
 
 .package-wrapper {
-    
+    display: flex;
+}
+
+.packages-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .package-card {
-
+    background-color: #F7F7F7;
+    border-radius: 16px;
+    padding: .5rem;
 }
 
 .package-card h5 {
@@ -323,11 +337,18 @@
 .package-info {
     font-size: 12px;
     color: #636365;
+    display: flex;
 }
 
 .package-price {
     font-size: 1rem;
     color: #F26CF9;
+}
+
+.packages-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .partners {
@@ -339,7 +360,6 @@
     border-radius: 16px;
     padding: 2rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    margin-top: 2rem;
 }
 
 .partners-header {
@@ -357,14 +377,102 @@
 
 .partners-content {
     display: flex;
-    gap: 2rem;
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-bottom: 1rem;
+    gap: 8rem;
 }
 
-/* .partners-content img {
-    max-width: 100px;
-    max-height: 40px;
-    object-fit: contain;
-} */
+.partners-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/*----------------
+   BOOKINGEVENT
+-----------------*/
+
+.booking-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #f1f1f1, 0 4px 8px rgba(0, 0, 0, 0.05);
+  font-family: "Inter", sans-serif;
+}
+
+.booking-container h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #37437D;
+  margin-bottom: 1.5rem;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-field label {
+  font-size: 14px;
+  color: #6B7280;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.input-field input,
+.input-field select {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+.input-field input:focus,
+.input-field select:focus {
+  outline: none;
+  border-color: #F26CF9;
+  box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.3);
+}
+
+.btn-submit-booking {
+  background-color: #F26CF9;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 36px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s ease;
+}
+
+.btn-submit-booking:hover {
+  background-color: #d75bdd;
+}
+
+.confirmation-text {
+  margin-top: 2rem;
+  background-color: #F3F4F6;
+  padding: 1rem;
+  border-radius: 12px;
+  color: #37437D;
+  font-size: 14px;
+  text-align: center;
+}
+
+.back-home-button {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #F26CF9;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-home-button:hover {
+    background-color: #d75bdd;
+}

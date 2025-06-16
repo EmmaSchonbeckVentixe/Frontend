@@ -11,7 +11,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Events />} />
       <Route path='/events/:id' element={<EventDetailsP />} />
-      <Route path='events/bookings/:id' element={<BookingEvent />} />
+      <Route path='events/booking/:id' element={<BookingEvent />} />
     </Routes>
   )
 }

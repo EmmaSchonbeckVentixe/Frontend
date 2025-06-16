@@ -8,4 +8,4 @@ const EventDetailsHeader = () => {
   )
 }
 
-export default EventDetailsHeader
+export default EventDetailsHeader;

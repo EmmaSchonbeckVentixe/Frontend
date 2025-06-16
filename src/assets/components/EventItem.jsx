@@ -27,4 +27,4 @@ const EventItem = ({ item }) => {
     )
 }
 
-export default EventItem
+export default EventItem;
