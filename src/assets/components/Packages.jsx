@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Packages = () => {
   return (
     <div className='packages card'>
@@ -10,7 +11,6 @@ const Packages = () => {
       <div className='packages-content'>
             <div className='package-card'>
                   <h5>General Admission Package</h5>
-                  <img src="/Images/Packages/CheckCircle.svg" alt="Checkmark" />
                   <span className='package-price'>$50</span>
                   <div className='package-wrapper'>
                         <div className='package-info'>

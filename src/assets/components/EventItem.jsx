@@ -10,13 +10,13 @@ const EventItem = ({ item }) => {
                 </div>
                 <div className='event-information'>
                     <div className='event-date-time'>
-                        <p>June 5, 2029 - 3:00 PM</p>
+                        {item.eventDate}
                     </div>
                     <div className='event-title'>
                         {item.title}
                     </div>
                     <div className='event-location'>
-                        <p>Rocky Ridge Exhibition Hall, Denver, CO</p>
+                        {item.location}
                     </div>
                     <div className='event-price'>
                         <p>40$</p>

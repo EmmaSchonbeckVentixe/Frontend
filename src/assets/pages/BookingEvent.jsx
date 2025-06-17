@@ -8,6 +8,7 @@ const BookingEvent = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     eventId: id,
+    packageId: '',
     firstName: '',
     lastName: '',
     email: '',
@@ -20,6 +21,12 @@ const BookingEvent = () => {
   useEffect(() => {
     getEvents()
   }, [])
+
+  useEffect(() => {
+    if (event && event.packages) {
+      console.log("📦 Packages i event:", event.packages);
+    }
+  }, [event]);
           
   const getEvents = async () => {
     try {
@@ -27,7 +34,9 @@ const BookingEvent = () => {
       if (!res.ok) throw new Error('Failed to fetch server')
 
       const data = await res.json()
-      setEvent(data.result)
+      console.log("🎯 Full response från API:", data)
+      setEvent(prev => ({ ...data.result, packages: data.result.packages ?? [] }));
+      console.log("✅ Data.result.packages:", data.result.packages);
     } catch (err) {
       console.error(err)
     }
@@ -69,6 +78,9 @@ const BookingEvent = () => {
       setIsSubmitted(true);
     }
   };
+
+    console.log("📦 Packages i event:", event.packages);
+
 
     return (
       <div className='booking-container'>
