@@ -31,6 +31,7 @@ const BookingEvent = () => {
   const getEvents = async () => {
     try {
       const res = await fetch(`https://ee-eventservice-ewfjbzhzbrerd7bw.swedencentral-01.azurewebsites.net/api/Events/${id}`)
+      // const res = await fetch(`https://localhost:7044/api/Events/${id}`);
       if (!res.ok) throw new Error('Failed to fetch server')
 
       const data = await res.json()
@@ -44,7 +45,7 @@ const BookingEvent = () => {
 
   const postBooking = async () => {
     try {
-      const res = await fetch(`https://ee-bookingservice-ewfjbzhzbrerd7bw.swedencentral-01.azurewebsites.net/api/bookings`, {
+      const res = await fetch(`https://ee-bookingservice-fbftdwbnfpgzfgba.swedencentral-01.azurewebsites.net/api/bookings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

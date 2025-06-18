@@ -14,13 +14,13 @@
 
 .portal-wrapper {
     display: grid;
-    grid-template-columns: 18rem 1fr;
+    grid-template-columns: 24rem 1fr;
     grid-template-areas: "navbar header" "navbar eventlist" "navbar footer";
     gap: 1rem;
     padding: 1rem;
     height: 100dvh;
     box-sizing: border-box;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .navbar-wrapper {
@@ -49,6 +49,7 @@
     grid-area: eventlist;
 
     display: grid;
+    gap: 1rem;
     grid-template-columns: repeat(4, auto);
     background-color: #F7F7F7;
     padding: 1rem;
@@ -74,6 +75,9 @@
 
 .navbar {
     margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .logo-ventixe {
@@ -88,22 +92,56 @@
 }
 
 .navlinks {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.navlinks p {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.navlink-button-img {
     display: flex;
+    justify-content: start;
     align-items: center;
-    gap: .5rem;
-    margin-top: 2rem;
+    gap: .7rem;
+    color: #37437D;
+}
+
+.navlinks.active {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navlink-button-img.active {
+    position: relative;
+    overflow: visible;
 
     img {
-        color: black;
-        fill: currentColor;
+        filter: brightness(0) saturate(100%) invert(38%) sepia(67%) saturate(682%) hue-rotate(273deg) brightness(180%) contrast(106%);
     }
+}
 
-    p {
-        font-size: 1rem;
-        font-family: "Inter", sans-serif;
-        font-optical-sizing: auto;;
-        font-style: normal;
-    }
+.navlink-button-img.active p {
+    color: #f26cf9;
+    text-decoration: none;
+    list-style: none;
+}
+
+.navlink-button-img.active::before {
+    content: '';
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: -42px;
+    width: 6px;
+    background-color: #f26cf9;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 /*----------------
@@ -143,10 +181,12 @@
 .event-link {
     text-decoration: none;
     color: inherit;
+    width: fit-content;
 }
 
 .event-card {
-    width: 280px;
+    width: 20rem;
+    height: 100%;
     background-color: #ffffff;
     border-radius: 16px;
     box-shadow: 0 0 0 1px #f1f1f1, 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -170,21 +210,15 @@
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .event-date-time {
+    font-size: 11px;
     display: flex;
     align-items: center;
     gap: .5rem;
-}
-
-.event-date-time p {
-    font-size: 12px;
-    font-optical-sizing: auto;;
-    font-style: normal;
     color: #777779;
-    margin: 0;
 }
 
 .event-title {
@@ -202,7 +236,7 @@
     gap: .5rem;
 }
 
-.event-location p {
+.event-location {
     font-size: 11px;
     font-optical-sizing: auto;;
     font-style: normal;
@@ -210,11 +244,11 @@
     margin: 0;
 }
 
-.event-price p {
+.event-price {
     font-size: 18px;
     font-optical-sizing: auto;;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 600;
     color: #F26CF9;
     text-align: right;
     margin: 8px 0 0;
@@ -226,10 +260,10 @@
 
 .event-details {
     display: grid;
-    grid-template-columns: 18rem 1fr;
+    grid-template-columns: 24rem 1fr;
     grid-template-areas: "navbar header" "navbar main" "navbar footer";
     gap: 1rem;
-    padding: .7rem;
+    padding: 1rem;
     width: 100%;
 }
 
@@ -282,6 +316,35 @@
 
 .event-card a:hover {
     background-color: #c24dc9;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    h5 {
+        font-size: 11px;
+        font-weight: 600;
+        color: #37437D;
+    }
+
+    p {
+        font-size: 12px;
+        color: #434345;
+    }
+}
+
+.location-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.description-booking {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .terms-list {
@@ -407,7 +470,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 1rem;
-    gap: 8rem;
+    gap: 5rem;
 }
 
 .partners-flex {
@@ -497,8 +560,5 @@
   color: #F26CF9;
   text-decoration: none;
   font-weight: 600;
-}
-
-.back-home-button:hover {
-    background-color: #d75bdd;
+  cursor: pointer;
 }

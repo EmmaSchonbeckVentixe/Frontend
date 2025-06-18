@@ -36,15 +36,22 @@ const EventDetails = () => {
               <img src="/Images/EventDetails/CalendarDot.svg" alt="Calendar icon" />
               <p>{event.eventDate}</p>
             </div>
-            <div className='event-location'>
-              <img src="/Images/EventDetails/MapPin.svg" alt="Map pin icon" />
-              <p>{event.location}</p>
+            <div className='location-price'>
+              <div className='event-location'>
+                <img src="/Images/EventDetails/MapPin.svg" alt="Map pin icon" />
+                <p>{event.location}</p>
+              </div>
+              <div className='event-price'>
+                  <p>From 40$</p>
+              </div>
             </div>
-            <div className='description'>
-              <h5>About event</h5>
-              <p>{event.description}</p>
+            <div className='description-booking'>
+              <div className='description'>
+                <h5>About event</h5>
+                <p>{event.description}</p>
+              </div>
+              <Link to={`/events/booking/${id}`}>Book Event</Link>
             </div>
-            <Link to={`/events/booking/${id}`}>Book Event</Link>
           </div>
           <div className='terms-list'>
             <Terms />
